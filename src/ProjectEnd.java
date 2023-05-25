@@ -11,7 +11,7 @@ public class ProjectEnd {
         HomeInterface homeInterface = new HomeInterface();
         frame.setContentPane(homeInterface.getPanelView());
         homeInterface.pack();
-        homeInterface.setSize(616, 1000);
+        homeInterface.setSize(616, 800);
         homeInterface.setVisible(true);
 
     }

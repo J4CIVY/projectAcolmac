@@ -2,6 +2,7 @@ package Presentacion;
 
 
 import java.awt.BorderLayout;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -168,23 +169,20 @@ public class UserLogin extends javax.swing.JPanel {
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         
         usuario = txtUsusario.getText();
-        contrasena = jpasContrasena.getText();
+        contrasena = Arrays.toString(jpasContrasena.getPassword());
         
-        if (usuario.equals("")){
-            JOptionPane.showMessageDialog(null,"Por Favor Ingrese Su Usuario");
-        }else if (contrasena.equals("")){
-            JOptionPane.showMessageDialog(null, "Por Favor Ingrese Su Contraseña");
-        } else {         
             Filtro filtro = new Filtro();
             filtro.setSize(600, 400);
             filtro.setLocation(0,0);
             
-            HomeInterface homeInterface = new HomeInterface();
-            homeInterface.getPanelContenedor().removeAll();
-            homeInterface.getPanelContenedor().add(filtro, BorderLayout.CENTER);
-            homeInterface.getPanelContenedor().revalidate();
-            homeInterface.getPanelContenedor().repaint();
-        }
+            pnlPrincipal.removeAll();
+            pnlPrincipal.revalidate();
+            pnlPrincipal.repaint();
+            pnlPrincipal.add(filtro,BorderLayout.CENTER);
+            pnlPrincipal.revalidate();
+            pnlPrincipal.repaint();
+            
+        
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
