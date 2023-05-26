@@ -1,17 +1,14 @@
 package Presentacion;
 
-
+import Logica.UsuarioDTO;
 import java.awt.BorderLayout;
 import java.util.Arrays;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class UserLogin extends javax.swing.JPanel {
 
-    private String usuario;
-    private String contrasena;
+//    private String id;
+//    private String pass;
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -24,9 +21,9 @@ public class UserLogin extends javax.swing.JPanel {
         txtUsusario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jpasContrasena = new javax.swing.JPasswordField();
         btnIniciarSesion = new javax.swing.JButton();
         btnAyuda = new javax.swing.JButton();
+        txtPassword = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -75,8 +72,6 @@ public class UserLogin extends javax.swing.JPanel {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Contraseña");
 
-        jpasContrasena.setText("jPasswordField1");
-
         btnIniciarSesion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(0, 0, 49));
         btnIniciarSesion.setText("Iniciar Sesión");
@@ -108,17 +103,12 @@ public class UserLogin extends javax.swing.JPanel {
             }
         });
 
+        txtPassword.setText("jTextField1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpasContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(218, 218, 218))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +123,12 @@ public class UserLogin extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(261, 261, 261))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(218, 218, 218))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +140,7 @@ public class UserLogin extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jpasContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -166,21 +162,25 @@ public class UserLogin extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("deprecation")
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         
-        usuario = txtUsusario.getText();
-        contrasena = Arrays.toString(jpasContrasena.getPassword());
+//        id = this.txtUsusario.getText();
+//        pass = Arrays.toString(this.jpasContrasena.getPassword());
         
-            Filtro filtro = new Filtro();
-            filtro.setSize(600, 400);
-            filtro.setLocation(0,0);
+        UsuarioDTO usuarioDTO = new UsuarioDTO();
+        usuarioDTO.validacionLogin(txtUsusario.getText(), txtPassword.getText());
+        
+        Filtro filtro = new Filtro();
+        filtro.setSize(600, 400);
+        filtro.setLocation(0,0);
             
-            pnlPrincipal.removeAll();
-            pnlPrincipal.revalidate();
-            pnlPrincipal.repaint();
-            pnlPrincipal.add(filtro,BorderLayout.CENTER);
-            pnlPrincipal.revalidate();
-            pnlPrincipal.repaint();
+        pnlPrincipal.removeAll();
+        pnlPrincipal.revalidate();
+        pnlPrincipal.repaint();
+        pnlPrincipal.add(filtro,BorderLayout.CENTER);
+        pnlPrincipal.revalidate();
+        pnlPrincipal.repaint();
             
         
         
@@ -199,16 +199,22 @@ public class UserLogin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jpasContrasena;
     private javax.swing.JPanel pnlPrincipal;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUsusario;
     // End of variables declaration//GEN-END:variables
 
 public UserLogin() {
-        initComponents();    
-           
-        
+        initComponents();       
     }
+
+public void login () {
+    
+    UsuarioDTO usuarioDTO = new UsuarioDTO();
+    usuarioDTO.validacionLogin(txtUsusario.getText(), txtPassword.getText());
+    
+}
+                
 
     public JPanel getPanelPrincipal () {
             
@@ -221,8 +227,8 @@ public UserLogin() {
         
     }
     
-    public JPasswordField getJPassContrasena(){
+    public JTextField getJPassContrasena(){
 
-        return this.jpasContrasena;
+        return this.txtPassword;
     }
 }

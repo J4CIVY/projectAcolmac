@@ -12,18 +12,20 @@ private Connection connection;
     }
     
     public void createTable() {
+        String sql = "CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, name TEXT, surname TEXT, pass TEXT, email TEXT)";
         try {
             Statement statement = this.connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, surname TEXT, pass TEXT, email TEXT)");
+            statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
  
-    public boolean create(int id, String name, String surname, String pass, String email) {
+    public boolean create(String id, String name, String surname, String pass, String email) {
+        String sql = "INSERT INTO users(id, name, surname, pass, email) VALUES (?, ?, ?, ?, ?)";
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement("INSERT INTO users(id, name, surname, pass, email) VALUES (?, ?, ?, ?, ?)");
-            preparedStatement.setInt(1, id );
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setString(1, id );
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, surname);
             preparedStatement.setString(4, pass);
@@ -33,7 +35,21 @@ private Connection connection;
             e.printStackTrace();
         }
         return true;
-}        
+    }
+    
+    public ResultSet validateUserLogin(String id, String pass) {
+        
+        String sql = "SELECT id, pass FROM users WHERE id = ? AND pass = ?";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setString(1, id );
+            preparedStatement.setString(2, pass );
+            ResultSet resultSet = preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    return null;
+    }
 //        
 //        
 //        public void readAll() {

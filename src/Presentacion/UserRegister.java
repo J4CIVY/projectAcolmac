@@ -1,7 +1,6 @@
 package Presentacion;
 
 import Logica.UsuarioDTO;
-import Persistencia.Conexion;
 
 
 public class UserRegister extends javax.swing.JPanel {
@@ -234,8 +233,7 @@ public class UserRegister extends javax.swing.JPanel {
         
 
              UsuarioDTO usuarioDTO = new UsuarioDTO();
-             usuarioDTO.registrar(Integer.parseInt(txtidentificacion.getText()),txtNombre.getText(),txtApellidos.getText(), txtContrasena.getText(), txtCorreo.getText());
-             
+             usuarioDTO.registrar(txtidentificacion.getText(),txtNombre.getText(),txtApellidos.getText(), txtContrasena.getText(), txtCorreo.getText());      
  
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
