@@ -162,9 +162,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtUsusario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -250,9 +247,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPassword">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

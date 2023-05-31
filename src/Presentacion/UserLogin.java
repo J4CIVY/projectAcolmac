@@ -60,8 +60,6 @@ public class UserLogin extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtUsusario.setText("jTextField1");
-
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 49));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -102,8 +100,6 @@ public class UserLogin extends javax.swing.JPanel {
                 btnAyudaActionPerformed(evt);
             }
         });
-
-        txtPassword.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
