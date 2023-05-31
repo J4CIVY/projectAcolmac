@@ -1,11 +1,11 @@
+
 import Presentacion.HomeInterface;
 import javax.swing.JFrame;
-
 
 public class ProjectEnd {
 
     public static void main(String[] args) {
-        
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         HomeInterface homeInterface = new HomeInterface();
@@ -15,5 +15,5 @@ public class ProjectEnd {
         homeInterface.setVisible(true);
 
     }
-    
+
 }

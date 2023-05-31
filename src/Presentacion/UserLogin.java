@@ -4,12 +4,12 @@ import Logica.UsuarioDTO;
 import java.awt.BorderLayout;
 import java.util.Arrays;
 import javax.swing.*;
+import java.sql.*;
 
 public class UserLogin extends javax.swing.JPanel {
 
 //    private String id;
 //    private String pass;
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -162,28 +162,10 @@ public class UserLogin extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("deprecation")
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        
-//        id = this.txtUsusario.getText();
-//        pass = Arrays.toString(this.jpasContrasena.getPassword());
-        
-        UsuarioDTO usuarioDTO = new UsuarioDTO();
-        usuarioDTO.validacionLogin(txtUsusario.getText(), txtPassword.getText());
-        
-        Filtro filtro = new Filtro();
-        filtro.setSize(600, 400);
-        filtro.setLocation(0,0);
-            
-        pnlPrincipal.removeAll();
-        pnlPrincipal.revalidate();
-        pnlPrincipal.repaint();
-        pnlPrincipal.add(filtro,BorderLayout.CENTER);
-        pnlPrincipal.revalidate();
-        pnlPrincipal.repaint();
-            
-        
-        
+
+        login();
+
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
@@ -204,30 +186,51 @@ public class UserLogin extends javax.swing.JPanel {
     private javax.swing.JTextField txtUsusario;
     // End of variables declaration//GEN-END:variables
 
-public UserLogin() {
-        initComponents();       
+    public UserLogin() {
+        initComponents();
     }
 
-public void login () {
-    
-    UsuarioDTO usuarioDTO = new UsuarioDTO();
-    usuarioDTO.validacionLogin(txtUsusario.getText(), txtPassword.getText());
-    
-}
-                
+    public void login() {
 
-    public JPanel getPanelPrincipal () {
-            
-            return this.pnlPrincipal;
+        ResultSet rs;
+
+        try {
+
+            UsuarioDTO usuarioDTO = new UsuarioDTO();
+            rs = usuarioDTO.validacionLogin(txtUsusario.getText(), txtPassword.getText());
+
+            if (rs.next()) {
+                Filtro filtro = new Filtro();
+                filtro.setSize(600, 400);
+                filtro.setLocation(0, 0);
+
+                pnlPrincipal.removeAll();
+                pnlPrincipal.revalidate();
+                pnlPrincipal.repaint();
+                pnlPrincipal.add(filtro, BorderLayout.CENTER);
+                pnlPrincipal.revalidate();
+                pnlPrincipal.repaint();
+            } else {
+                System.out.println("Nel Verifique");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    
-    public JTextField getTxtUsuario () {
-        
-        return this.txtUsusario;
-        
+
     }
-    
-    public JTextField getJPassContrasena(){
+
+    public JPanel getPanelPrincipal() {
+
+        return this.pnlPrincipal;
+    }
+
+    public JTextField getTxtUsuario() {
+
+        return this.txtUsusario;
+
+    }
+
+    public JTextField getJPassContrasena() {
 
         return this.txtPassword;
     }

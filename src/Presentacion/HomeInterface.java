@@ -1,10 +1,11 @@
 package Presentacion;
+
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public final class HomeInterface extends javax.swing.JFrame{
+public final class HomeInterface extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -279,35 +280,35 @@ public final class HomeInterface extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUserLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserLoginActionPerformed
-        
+
         UserLogin userLogin = new UserLogin();
         userLogin.setSize(600, 400);
-        userLogin.setLocation(0,0);
-        
+        userLogin.setLocation(0, 0);
+
         pnlContenedor.removeAll();
         pnlContenedor.revalidate();
         pnlContenedor.repaint();
         pnlContenedor.add(userLogin, BorderLayout.CENTER);
         pnlContenedor.revalidate();
         pnlContenedor.repaint();
-        
+
     }//GEN-LAST:event_btnUserLoginActionPerformed
 
     private void btnUserRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserRegisterActionPerformed
-        
+
         UserRegister userRegister = new UserRegister();
         userRegister.setSize(600, 400);
-        userRegister.setLocation(0,0);
-        
+        userRegister.setLocation(0, 0);
+
         pnlContenedor.removeAll();
         pnlContenedor.revalidate();
         pnlContenedor.repaint();
         pnlContenedor.add(userRegister, BorderLayout.CENTER);
         pnlContenedor.revalidate();
         pnlContenedor.repaint();
-        
+
     }//GEN-LAST:event_btnUserRegisterActionPerformed
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnUserLogin;
     private javax.swing.JButton btnUserRegister;
@@ -326,58 +327,58 @@ public final class HomeInterface extends javax.swing.JFrame{
     private javax.swing.JPanel pnlView;
     private javax.swing.JLabel txtHora;
     // End of variables declaration//GEN-END:variables
-     
-public HomeInterface() {
+
+    public HomeInterface() {
         initComponents();
-        
+
         eventFecha.setText(fecha());
-        
+
         HomePresentation homePresentation = new HomePresentation();
         homePresentation.setSize(600, 400);
-        homePresentation.setLocation(0,0);
-        
+        homePresentation.setLocation(0, 0);
+
         pnlContenedor.removeAll();
         pnlContenedor.revalidate();
         pnlContenedor.repaint();
         pnlContenedor.add(homePresentation, BorderLayout.CENTER);
         pnlContenedor.revalidate();
-        pnlContenedor.repaint();        
+        pnlContenedor.repaint();
     }
 
-public static String fecha (){
+    public static String fecha() {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
         return dateFormat.format(date);
     }
 
-    public JPanel getPanelPrincipal () {
-        
+    public JPanel getPanelPrincipal() {
+
         return this.pnlPrincipal;
-        
+
     }
-    
-    public JPanel getPanelTitulo () {
-        
+
+    public JPanel getPanelTitulo() {
+
         return this.pnlTitulo;
     }
-    
-    public JPanel getPanelUsuario () {
-        
+
+    public JPanel getPanelUsuario() {
+
         return this.pnlUsuario;
     }
-    
-    public JPanel getPanelContenedor () {
-        
+
+    public JPanel getPanelContenedor() {
+
         return this.pnlContenedor;
     }
-    
-    public JPanel getPanelDebug () {
-        
+
+    public JPanel getPanelDebug() {
+
         return this.pnlDebug;
     }
-    
-    public JPanel getPanelView () {
-        
+
+    public JPanel getPanelView() {
+
         return this.pnlView;
-    }    
-}    
+    }
+}

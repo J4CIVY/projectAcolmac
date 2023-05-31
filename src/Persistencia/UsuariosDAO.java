@@ -1,54 +1,60 @@
 package Persistencia;
+
 import java.sql.*;
 
 public class UsuariosDAO {
 
-private Connection connection;
-    
+    private Connection connection;
+
     public UsuariosDAO() {
-    Conexion conexion = new Conexion();
-    this.connection = conexion.getConnection();
-    createTable();
+        Conexion conexion = new Conexion();
+        this.connection = conexion.getConnection();
+        createTable();
     }
-    
+
     public void createTable() {
         String sql = "CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, name TEXT, surname TEXT, pass TEXT, email TEXT)";
+        Statement st;
         try {
-            Statement statement = this.connection.createStatement();
-            statement.executeUpdate(sql);
+            st = this.connection.createStatement();
+            st.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
- 
+
     public boolean create(String id, String name, String surname, String pass, String email) {
         String sql = "INSERT INTO users(id, name, surname, pass, email) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement ps;
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.setString(1, id );
-            preparedStatement.setString(2, name);
-            preparedStatement.setString(3, surname);
-            preparedStatement.setString(4, pass);
-            preparedStatement.setString(5, email);
-            preparedStatement.executeUpdate();
+            ps = this.connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.setString(2, name);
+            ps.setString(3, surname);
+            ps.setString(4, pass);
+            ps.setString(5, email);
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return true;
     }
-    
+
     public ResultSet validateUserLogin(String id, String pass) {
-        
+
         String sql = "SELECT id, pass FROM users WHERE id = ? AND pass = ?";
+        PreparedStatement ps;
+        ResultSet rs;
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.setString(1, id );
-            preparedStatement.setString(2, pass );
-            ResultSet resultSet = preparedStatement.executeQuery();
+            ps = this.connection.prepareStatement(sql);
+            ps.setString(1, id);
+            ps.setString(2, pass);
+            rs = ps.executeQuery();
+            return rs;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    return null;
+        return null;
     }
 //        
 //        
@@ -89,6 +95,5 @@ private Connection connection;
 //    }
 //    
 //}
-    
+
 }
-   

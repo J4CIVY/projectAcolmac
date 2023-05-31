@@ -1,13 +1,12 @@
-
 package Persistencia;
+
 import java.sql.*;
 
-
 public class Conexion {
-    
+
     private Connection connection;
-    
-    public Conexion () {
+
+    public Conexion() {
         try {
             Class.forName("org.sqlite.JDBC");
             this.connection = DriverManager.getConnection("jdbc:sqlite:projectAcolmac.db");
@@ -16,8 +15,8 @@ public class Conexion {
             e.printStackTrace();
         }
     }
-    
-    public Connection getConnection (){
+
+    public Connection getConnection() {
         return this.connection;
     }
 }

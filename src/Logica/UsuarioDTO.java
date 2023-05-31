@@ -1,24 +1,26 @@
-
 package Logica;
 
 import Persistencia.UsuariosDAO;
+import java.sql.ResultSet;
 
 public class UsuarioDTO {
-    
-    public boolean registrar(String id, String name, String surname, String pass, String email){
-        
+
+    public boolean registrar(String id, String name, String surname, String pass, String email) {
+
         UsuariosDAO usuariosDAO = new UsuariosDAO();
         usuariosDAO.create(id, name, surname, pass, email);
         return true;
     }
-    
-    public boolean validacionLogin (String id, String pass) {
-        
+
+    public ResultSet validacionLogin(String id, String pass) {
+
+        ResultSet rs;
+
         UsuariosDAO usuariosDAO = new UsuariosDAO();
-        usuariosDAO.validateUserLogin(id, pass);
-        
-        return true;
-        
+        rs = usuariosDAO.validateUserLogin(id, pass);
+
+        return rs;
+
     }
-    
+
 }
