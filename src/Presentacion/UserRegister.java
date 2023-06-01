@@ -235,7 +235,6 @@ public class UserRegister extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;

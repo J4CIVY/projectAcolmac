@@ -4,6 +4,7 @@ import Logica.ConsultaApiPaisesDTO;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Filtro extends javax.swing.JPanel {
@@ -284,7 +285,6 @@ public class Filtro extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
@@ -312,6 +312,11 @@ public class Filtro extends javax.swing.JPanel {
 
         return this.pnlContenedor;
 
+    }
+
+    public JLabel getViewNombre() {
+
+        return this.viewNombre;
     }
 
 }

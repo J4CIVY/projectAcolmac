@@ -168,7 +168,6 @@ public class UserLogin extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAyudaActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAyuda;
     private javax.swing.JButton btnIniciarSesion;

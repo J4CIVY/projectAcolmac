@@ -1,12 +1,13 @@
 package Logica;
 
+import Presentacion.Filtro;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.*;
 
 public class ConsultaApiPaisesDTO {
 
@@ -32,13 +33,18 @@ public class ConsultaApiPaisesDTO {
             response.append(inputLine);
         }
 
-        in.close();
-
         JSONArray jsonArray = new JSONArray(response.toString());
         JSONObject jsonObject = jsonArray.getJSONObject(0);
-        System.out.println(jsonObject.getString("name"));
 
-        return response.toString();
+        for (Object obj : jsonArray) {
+
+            return new JSONObject(((JSONObject) obj).get("name").toString()).get("official").toString();
+
+        }
+
+        in.close();
+
+        return null;
     }
 
 }
