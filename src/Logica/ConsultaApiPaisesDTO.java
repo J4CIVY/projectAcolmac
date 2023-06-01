@@ -12,6 +12,7 @@ import org.json.*;
 public class ConsultaApiPaisesDTO {
 
     private static final String BASE_URL = "https://restcountries.com/v3.1/name/";
+    public StringBuffer response;
 
     public String getPaisInfo(String nombrePais) throws IOException {
 
@@ -27,24 +28,59 @@ public class ConsultaApiPaisesDTO {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        this.response = new StringBuffer();
 
         while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
+            this.response.append(inputLine);
         }
-
-        JSONArray jsonArray = new JSONArray(response.toString());
+            return null;
+    }
+        
+        public String getPaisRegularNombre () {
+            
+        JSONArray jsonArray = new JSONArray(this.response.toString());
         JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         for (Object obj : jsonArray) {
 
-            return new JSONObject(((JSONObject) obj).get("name").toString()).get("official").toString();
-
-        }
-
-        in.close();
-
+            return new JSONObject(((JSONObject) obj).get("name").toString()).get("common").toString();          
+        } 
         return null;
-    }
+        }
+        
+        public String getPaisOfficialNombre () {
+            
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
+        for (Object obj : jsonArray) {
+
+            return new JSONObject(((JSONObject) obj).get("name").toString()).get("official").toString();          
+        } 
+        return null;
+        }
+        
+        public String getPaisCOICodigo () {
+            
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+        for (Object obj : jsonArray) {
+
+            return ((JSONObject) obj).get("cca3").toString();          
+        } 
+        return null;
+        }
+        
+        public String getPaisGiniIndice () {
+            
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+        for (Object obj : jsonArray) {
+
+            return new JSONObject(((JSONObject) obj).get("gini").toString()).get("2019").toString();        
+        } 
+        return null;
+        }
 }

@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public final class HomeInterface extends javax.swing.JFrame {
+public class HomeInterface extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

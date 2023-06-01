@@ -19,12 +19,12 @@ public class Filtro extends javax.swing.JPanel {
 
         pnlPrincipal = new javax.swing.JPanel();
         pnlTitulo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         pnlFiltro = new javax.swing.JPanel();
         txtFiltro = new javax.swing.JTextField();
-        optFiltro = new javax.swing.JComboBox<>();
         btnBuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         pnlContenedor = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         ttlNombre = new javax.swing.JLabel();
@@ -50,9 +50,6 @@ public class Filtro extends javax.swing.JPanel {
         pnlTitulo.setMinimumSize(new java.awt.Dimension(600, 50));
         pnlTitulo.setPreferredSize(new java.awt.Dimension(600, 50));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("Bienvenido");
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/imagenes/ACOLMAC_Logo_White(2).png"))); // NOI18N
 
         javax.swing.GroupLayout pnlTituloLayout = new javax.swing.GroupLayout(pnlTitulo);
@@ -60,19 +57,13 @@ public class Filtro extends javax.swing.JPanel {
         pnlTituloLayout.setHorizontalGroup(
             pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTituloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addContainerGap(518, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(37, 37, 37))
         );
         pnlTituloLayout.setVerticalGroup(
             pnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTituloLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         pnlPrincipal.add(pnlTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 50));
@@ -84,12 +75,6 @@ public class Filtro extends javax.swing.JPanel {
         txtFiltro.setMinimumSize(new java.awt.Dimension(200, 20));
         txtFiltro.setPreferredSize(new java.awt.Dimension(200, 20));
 
-        optFiltro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        optFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        optFiltro.setMaximumSize(new java.awt.Dimension(200, 20));
-        optFiltro.setMinimumSize(new java.awt.Dimension(200, 20));
-        optFiltro.setPreferredSize(new java.awt.Dimension(200, 20));
-
         btnBuscar.setText("Buscar GINI");
         btnBuscar.setMaximumSize(new java.awt.Dimension(150, 20));
         btnBuscar.setMinimumSize(new java.awt.Dimension(150, 20));
@@ -100,31 +85,43 @@ public class Filtro extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Bienvenido");
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Introduzca El Nombre Del País Que Desea Consultar");
+
         javax.swing.GroupLayout pnlFiltroLayout = new javax.swing.GroupLayout(pnlFiltro);
         pnlFiltro.setLayout(pnlFiltroLayout);
         pnlFiltroLayout.setHorizontalGroup(
             pnlFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFiltroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(pnlFiltroLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(pnlFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(optFiltro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(367, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFiltroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74))
         );
         pnlFiltroLayout.setVerticalGroup(
             pnlFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFiltroLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(optFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addGroup(pnlFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pnlPrincipal.add(pnlFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 600, 100));
@@ -132,7 +129,8 @@ public class Filtro extends javax.swing.JPanel {
         pnlContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setText("INFORMACIÓN GENERAL DEL PAÍS");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Resultado De La Consulta");
 
         ttlNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         ttlNombre.setText("Nombre");
@@ -153,34 +151,30 @@ public class Filtro extends javax.swing.JPanel {
         ttlCodigoCoi.setPreferredSize(new java.awt.Dimension(90, 15));
 
         ttlUsoHorario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        ttlUsoHorario.setText("Uso Horario");
+        ttlUsoHorario.setText("Gini (UN 2019)");
         ttlUsoHorario.setMaximumSize(new java.awt.Dimension(90, 15));
         ttlUsoHorario.setMinimumSize(new java.awt.Dimension(90, 15));
         ttlUsoHorario.setPreferredSize(new java.awt.Dimension(90, 15));
 
         viewNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewNombre.setText("Nombre");
-        viewNombre.setMaximumSize(new java.awt.Dimension(90, 15));
-        viewNombre.setMinimumSize(new java.awt.Dimension(90, 15));
-        viewNombre.setPreferredSize(new java.awt.Dimension(90, 15));
+        viewNombre.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewNombre.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewNombre.setPreferredSize(new java.awt.Dimension(150, 15));
 
         viewNombreOficial.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewNombreOficial.setText("Nombre");
-        viewNombreOficial.setMaximumSize(new java.awt.Dimension(90, 15));
-        viewNombreOficial.setMinimumSize(new java.awt.Dimension(90, 15));
-        viewNombreOficial.setPreferredSize(new java.awt.Dimension(90, 15));
+        viewNombreOficial.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewNombreOficial.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewNombreOficial.setPreferredSize(new java.awt.Dimension(150, 15));
 
         viewCodigoCoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewCodigoCoi.setText("Nombre");
-        viewCodigoCoi.setMaximumSize(new java.awt.Dimension(90, 15));
-        viewCodigoCoi.setMinimumSize(new java.awt.Dimension(90, 15));
-        viewCodigoCoi.setPreferredSize(new java.awt.Dimension(90, 15));
+        viewCodigoCoi.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewCodigoCoi.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewCodigoCoi.setPreferredSize(new java.awt.Dimension(150, 15));
 
         viewUsoHorario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewUsoHorario.setText("Nombre");
-        viewUsoHorario.setMaximumSize(new java.awt.Dimension(90, 15));
-        viewUsoHorario.setMinimumSize(new java.awt.Dimension(90, 15));
-        viewUsoHorario.setPreferredSize(new java.awt.Dimension(90, 15));
+        viewUsoHorario.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewUsoHorario.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewUsoHorario.setPreferredSize(new java.awt.Dimension(150, 15));
 
         javax.swing.GroupLayout pnlContenedorLayout = new javax.swing.GroupLayout(pnlContenedor);
         pnlContenedor.setLayout(pnlContenedorLayout);
@@ -204,10 +198,12 @@ public class Filtro extends javax.swing.JPanel {
                     .addGroup(pnlContenedorLayout.createSequentialGroup()
                         .addComponent(ttlNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(148, Short.MAX_VALUE))
+                        .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(308, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlContenedorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlContenedorLayout.setVerticalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +275,10 @@ public class Filtro extends javax.swing.JPanel {
         try {
             ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
             String resultadoConsulta = consultaApiPaisesDTO.getPaisInfo(txtFiltro.getText());
-            viewNombre.setText(resultadoConsulta);
+            viewNombre.setText(consultaApiPaisesDTO.getPaisRegularNombre());
+            viewNombreOficial.setText(consultaApiPaisesDTO.getPaisOfficialNombre());
+            viewCodigoCoi.setText(consultaApiPaisesDTO.getPaisCOICodigo());
+            viewUsoHorario.setText(consultaApiPaisesDTO.getPaisGiniIndice());
         } catch (IOException ex) {
             Logger.getLogger(Filtro.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -290,7 +289,7 @@ public class Filtro extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JComboBox<String> optFiltro;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel pnlAcciones;
     private javax.swing.JPanel pnlContenedor;
     private javax.swing.JPanel pnlFiltro;
