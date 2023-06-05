@@ -33,54 +33,101 @@ public class ConsultaApiPaisesDTO {
         while ((inputLine = in.readLine()) != null) {
             this.response.append(inputLine);
         }
-            return null;
+        return null;
     }
-        
-        public String getPaisRegularNombre () {
-            
+
+    public String getPaisRegularNombre() {
+
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+
+        for (Object obj : jsonArray) {
+
+            String PaisRegularNombre = new JSONObject(((JSONObject) obj).get("name").toString()).get("common").toString();
+
+            return PaisRegularNombre;
+        }
+        return null;
+    }
+
+    public String getPaisOfficialNombre() {
+
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+
+        for (Object obj : jsonArray) {
+
+            String PaisOfficialNombre = new JSONObject(((JSONObject) obj).get("name").toString()).get("official").toString();
+
+            return PaisOfficialNombre;
+        }
+        return null;
+    }
+
+    public String getPaisCapital() {
+
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+
+        for (Object obj : jsonArray) {
+
+            return ((JSONObject) obj).getJSONArray("capital").optString(0);
+        }
+        return null;
+    }
+
+    public String getPaisGiniIndice() {
+
+        JSONArray jsonArray = new JSONArray(this.response.toString());
+
+        for (Object obj : jsonArray) {
+
+            String PaisGiniIndice = new JSONObject(((JSONObject) obj).get("gini").toString()).get("2019").toString();
+
+            return PaisGiniIndice;
+        }
+        return null;
+    }
+
+    public String getPaisCOICodigo() {
+
         JSONArray jsonArray = new JSONArray(this.response.toString());
         JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         for (Object obj : jsonArray) {
 
-            return new JSONObject(((JSONObject) obj).get("name").toString()).get("common").toString();          
-        } 
-        return null;
+            return ((JSONObject) obj).get("cca3").toString();
         }
-        
-        public String getPaisOfficialNombre () {
-            
+        return null;
+    }
+
+    public String getPaisPoblacion() {
+
         JSONArray jsonArray = new JSONArray(this.response.toString());
-        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         for (Object obj : jsonArray) {
 
-            return new JSONObject(((JSONObject) obj).get("name").toString()).get("official").toString();          
-        } 
-        return null;
+            return ((JSONObject) obj).get("population").toString();
         }
-        
-        public String getPaisCOICodigo () {
-            
+        return null;
+    }
+
+    public String getPaisZonaHoraria() {
+
         JSONArray jsonArray = new JSONArray(this.response.toString());
-        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         for (Object obj : jsonArray) {
 
-            return ((JSONObject) obj).get("cca3").toString();          
-        } 
-        return null;
+            return ((JSONObject) obj).getJSONArray("timezones").optString(0);
         }
-        
-        public String getPaisGiniIndice () {
-            
+        return null;
+    }
+
+    public String getPaisContinente() {
+
         JSONArray jsonArray = new JSONArray(this.response.toString());
-        JSONObject jsonObject = jsonArray.getJSONObject(0);
 
         for (Object obj : jsonArray) {
 
-            return new JSONObject(((JSONObject) obj).get("gini").toString()).get("2019").toString();        
-        } 
-        return null;
+            return ((JSONObject) obj).getJSONArray("continents").optString(0);
         }
+        return null;
+    }
 }

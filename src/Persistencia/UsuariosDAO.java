@@ -50,6 +50,7 @@ public class UsuariosDAO {
             ps.setString(1, id);
             ps.setString(2, pass);
             rs = ps.executeQuery();
+            this.connection.close();
             return rs;
         } catch (SQLException e) {
             e.printStackTrace();

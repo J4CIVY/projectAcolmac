@@ -1,11 +1,13 @@
 package Presentacion;
 
 import Logica.ConsultaApiPaisesDTO;
+import Logica.ApiBaseDTO;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Filtro extends javax.swing.JPanel {
 
@@ -26,16 +28,26 @@ public class Filtro extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         pnlContenedor = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        Indice = new javax.swing.JLabel();
+        txtMostrarPaisFiltrado = new javax.swing.JLabel();
         ttlNombre = new javax.swing.JLabel();
-        ttlNombreOficial = new javax.swing.JLabel();
-        ttlCodigoCoi = new javax.swing.JLabel();
-        ttlUsoHorario = new javax.swing.JLabel();
         viewNombre = new javax.swing.JLabel();
+        ttlNombreOficial = new javax.swing.JLabel();
         viewNombreOficial = new javax.swing.JLabel();
+        ttlCapital = new javax.swing.JLabel();
+        viewCapital = new javax.swing.JLabel();
+        ttlGini2019 = new javax.swing.JLabel();
+        viewGini2019 = new javax.swing.JLabel();
+        ttlCodigoCoi = new javax.swing.JLabel();
         viewCodigoCoi = new javax.swing.JLabel();
-        viewUsoHorario = new javax.swing.JLabel();
+        ttlPoblacion = new javax.swing.JLabel();
+        viewPoblacion = new javax.swing.JLabel();
+        ttlZonaHoraria = new javax.swing.JLabel();
+        viewZonaHoraria = new javax.swing.JLabel();
+        ttlContinente = new javax.swing.JLabel();
+        viewContinente = new javax.swing.JLabel();
         pnlAcciones = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         pnlView = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
@@ -128,9 +140,12 @@ public class Filtro extends javax.swing.JPanel {
 
         pnlContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Resultado De La Consulta");
+        Indice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Indice.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        Indice.setText("Índice De Desigualdad De");
+
+        txtMostrarPaisFiltrado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        txtMostrarPaisFiltrado.setText("Paises");
 
         ttlNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         ttlNombre.setText("Nombre");
@@ -138,11 +153,45 @@ public class Filtro extends javax.swing.JPanel {
         ttlNombre.setMinimumSize(new java.awt.Dimension(90, 15));
         ttlNombre.setPreferredSize(new java.awt.Dimension(90, 15));
 
+        viewNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewNombre.setForeground(new java.awt.Color(0, 0, 49));
+        viewNombre.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewNombre.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewNombre.setPreferredSize(new java.awt.Dimension(150, 15));
+
         ttlNombreOficial.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         ttlNombreOficial.setText("Nombre Oficial");
         ttlNombreOficial.setMaximumSize(new java.awt.Dimension(90, 15));
         ttlNombreOficial.setMinimumSize(new java.awt.Dimension(90, 15));
         ttlNombreOficial.setPreferredSize(new java.awt.Dimension(90, 15));
+
+        viewNombreOficial.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewNombreOficial.setForeground(new java.awt.Color(0, 0, 49));
+        viewNombreOficial.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewNombreOficial.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewNombreOficial.setPreferredSize(new java.awt.Dimension(150, 15));
+
+        ttlCapital.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ttlCapital.setForeground(new java.awt.Color(0, 0, 49));
+        ttlCapital.setText("Capital");
+
+        viewCapital.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewCapital.setForeground(new java.awt.Color(0, 0, 49));
+        viewCapital.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewCapital.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewCapital.setPreferredSize(new java.awt.Dimension(150, 15));
+
+        ttlGini2019.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ttlGini2019.setText("Gini (UN 2019)");
+        ttlGini2019.setMaximumSize(new java.awt.Dimension(90, 15));
+        ttlGini2019.setMinimumSize(new java.awt.Dimension(90, 15));
+        ttlGini2019.setPreferredSize(new java.awt.Dimension(90, 15));
+
+        viewGini2019.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewGini2019.setForeground(new java.awt.Color(0, 0, 49));
+        viewGini2019.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewGini2019.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewGini2019.setPreferredSize(new java.awt.Dimension(150, 15));
 
         ttlCodigoCoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         ttlCodigoCoi.setText("Codigo COI");
@@ -150,96 +199,153 @@ public class Filtro extends javax.swing.JPanel {
         ttlCodigoCoi.setMinimumSize(new java.awt.Dimension(90, 15));
         ttlCodigoCoi.setPreferredSize(new java.awt.Dimension(90, 15));
 
-        ttlUsoHorario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        ttlUsoHorario.setText("Gini (UN 2019)");
-        ttlUsoHorario.setMaximumSize(new java.awt.Dimension(90, 15));
-        ttlUsoHorario.setMinimumSize(new java.awt.Dimension(90, 15));
-        ttlUsoHorario.setPreferredSize(new java.awt.Dimension(90, 15));
-
-        viewNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewNombre.setMaximumSize(new java.awt.Dimension(150, 15));
-        viewNombre.setMinimumSize(new java.awt.Dimension(150, 15));
-        viewNombre.setPreferredSize(new java.awt.Dimension(150, 15));
-
-        viewNombreOficial.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewNombreOficial.setMaximumSize(new java.awt.Dimension(150, 15));
-        viewNombreOficial.setMinimumSize(new java.awt.Dimension(150, 15));
-        viewNombreOficial.setPreferredSize(new java.awt.Dimension(150, 15));
-
         viewCodigoCoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         viewCodigoCoi.setMaximumSize(new java.awt.Dimension(150, 15));
         viewCodigoCoi.setMinimumSize(new java.awt.Dimension(150, 15));
         viewCodigoCoi.setPreferredSize(new java.awt.Dimension(150, 15));
 
-        viewUsoHorario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        viewUsoHorario.setMaximumSize(new java.awt.Dimension(150, 15));
-        viewUsoHorario.setMinimumSize(new java.awt.Dimension(150, 15));
-        viewUsoHorario.setPreferredSize(new java.awt.Dimension(150, 15));
+        ttlPoblacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ttlPoblacion.setForeground(new java.awt.Color(0, 0, 49));
+        ttlPoblacion.setText("Poblacion");
+
+        viewPoblacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewPoblacion.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewPoblacion.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewPoblacion.setPreferredSize(new java.awt.Dimension(150, 15));
+
+        ttlZonaHoraria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ttlZonaHoraria.setForeground(new java.awt.Color(0, 0, 49));
+        ttlZonaHoraria.setText("Zona Horaria");
+
+        viewZonaHoraria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewZonaHoraria.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewZonaHoraria.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewZonaHoraria.setPreferredSize(new java.awt.Dimension(150, 15));
+
+        ttlContinente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ttlContinente.setForeground(new java.awt.Color(0, 0, 49));
+        ttlContinente.setText("Continente");
+
+        viewContinente.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        viewContinente.setMaximumSize(new java.awt.Dimension(150, 15));
+        viewContinente.setMinimumSize(new java.awt.Dimension(150, 15));
+        viewContinente.setPreferredSize(new java.awt.Dimension(150, 15));
 
         javax.swing.GroupLayout pnlContenedorLayout = new javax.swing.GroupLayout(pnlContenedor);
         pnlContenedor.setLayout(pnlContenedorLayout);
         pnlContenedorLayout.setHorizontalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlContenedorLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlContenedorLayout.createSequentialGroup()
-                        .addComponent(ttlNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlContenedorLayout.createSequentialGroup()
+                                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ttlCapital)
+                                    .addComponent(ttlGini2019, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlContenedorLayout.createSequentialGroup()
+                                        .addComponent(viewGini2019, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ttlContinente))
+                                    .addGroup(pnlContenedorLayout.createSequentialGroup()
+                                        .addComponent(viewCapital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ttlZonaHoraria))))
+                            .addGroup(pnlContenedorLayout.createSequentialGroup()
+                                .addComponent(ttlNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(viewNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(ttlPoblacion))
+                            .addGroup(pnlContenedorLayout.createSequentialGroup()
+                                .addComponent(ttlNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(ttlCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(viewNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewPoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewZonaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewContinente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlContenedorLayout.createSequentialGroup()
-                        .addComponent(ttlCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(viewCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlContenedorLayout.createSequentialGroup()
-                        .addComponent(ttlUsoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(viewUsoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlContenedorLayout.createSequentialGroup()
-                        .addComponent(ttlNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(308, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlContenedorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(Indice, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMostrarPaisFiltrado, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlContenedorLayout.setVerticalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlContenedorLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(jLabel3)
+                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Indice)
+                    .addComponent(txtMostrarPaisFiltrado))
                 .addGap(18, 18, 18)
-                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ttlNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ttlNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ttlCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(viewCodigoCoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ttlUsoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewUsoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
+                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ttlNombreOficial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlContenedorLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewPoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ttlPoblacion))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlContenedorLayout.createSequentialGroup()
+                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ttlCapital)
+                            .addComponent(viewCapital, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ttlZonaHoraria, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(viewGini2019, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ttlGini2019, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ttlContinente)))
+                    .addGroup(pnlContenedorLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(viewZonaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(viewContinente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pnlPrincipal.add(pnlContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 600, 150));
+
+        jButton1.setText("Guardar Los Datos Obtenidos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlAccionesLayout = new javax.swing.GroupLayout(pnlAcciones);
         pnlAcciones.setLayout(pnlAccionesLayout);
         pnlAccionesLayout.setHorizontalGroup(
             pnlAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(pnlAccionesLayout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jButton1)
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         pnlAccionesLayout.setVerticalGroup(
             pnlAccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccionesLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(30, 30, 30))
         );
 
         pnlPrincipal.add(pnlAcciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 600, 90));
@@ -272,23 +378,23 @@ public class Filtro extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        try {
-            ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
-            String resultadoConsulta = consultaApiPaisesDTO.getPaisInfo(txtFiltro.getText());
-            viewNombre.setText(consultaApiPaisesDTO.getPaisRegularNombre());
-            viewNombreOficial.setText(consultaApiPaisesDTO.getPaisOfficialNombre());
-            viewCodigoCoi.setText(consultaApiPaisesDTO.getPaisCOICodigo());
-            viewUsoHorario.setText(consultaApiPaisesDTO.getPaisGiniIndice());
-        } catch (IOException ex) {
-            Logger.getLogger(Filtro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        buscarGini();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        ApiBaseDTO apiBaseDTO = new ApiBaseDTO();
+        ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
+        apiBaseDTO.guardarDatosApi(viewNombre.getText(), viewNombreOficial.getText(), viewCapital.getText(), viewGini2019.getText(), viewCodigoCoi.getText(), viewPoblacion.getText(), viewZonaHoraria.getText(), viewContinente.getText());
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Indice;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel pnlAcciones;
     private javax.swing.JPanel pnlContenedor;
@@ -296,15 +402,24 @@ public class Filtro extends javax.swing.JPanel {
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPanel pnlTitulo;
     private javax.swing.JPanel pnlView;
+    private javax.swing.JLabel ttlCapital;
     private javax.swing.JLabel ttlCodigoCoi;
+    private javax.swing.JLabel ttlContinente;
+    private javax.swing.JLabel ttlGini2019;
     private javax.swing.JLabel ttlNombre;
     private javax.swing.JLabel ttlNombreOficial;
-    private javax.swing.JLabel ttlUsoHorario;
+    private javax.swing.JLabel ttlPoblacion;
+    private javax.swing.JLabel ttlZonaHoraria;
     private javax.swing.JTextField txtFiltro;
+    private javax.swing.JLabel txtMostrarPaisFiltrado;
+    private javax.swing.JLabel viewCapital;
     private javax.swing.JLabel viewCodigoCoi;
+    private javax.swing.JLabel viewContinente;
+    private javax.swing.JLabel viewGini2019;
     private javax.swing.JLabel viewNombre;
     private javax.swing.JLabel viewNombreOficial;
-    private javax.swing.JLabel viewUsoHorario;
+    private javax.swing.JLabel viewPoblacion;
+    private javax.swing.JLabel viewZonaHoraria;
     // End of variables declaration//GEN-END:variables
 
     public JPanel getPnlContenedor() {
@@ -318,4 +433,26 @@ public class Filtro extends javax.swing.JPanel {
         return this.viewNombre;
     }
 
+    public void buscarGini() {
+        try {
+            ConsultaApiPaisesDTO consultaApiPaisesDTO = new ConsultaApiPaisesDTO();
+            String resultadoConsulta = consultaApiPaisesDTO.getPaisInfo(txtFiltro.getText());
+            txtMostrarPaisFiltrado.setText(txtFiltro.getText());
+            viewNombre.setText(consultaApiPaisesDTO.getPaisRegularNombre());
+            viewNombreOficial.setText(consultaApiPaisesDTO.getPaisOfficialNombre());
+            viewCapital.setText(consultaApiPaisesDTO.getPaisCapital());
+            viewCodigoCoi.setText(consultaApiPaisesDTO.getPaisCOICodigo());
+            viewPoblacion.setText(consultaApiPaisesDTO.getPaisPoblacion());
+            viewContinente.setText(consultaApiPaisesDTO.getPaisContinente());
+            viewZonaHoraria.setText(consultaApiPaisesDTO.getPaisZonaHoraria());
+            viewGini2019.setText(consultaApiPaisesDTO.getPaisGiniIndice());
+
+        } catch (IOException ex) {
+            Logger.getLogger(Filtro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void guardarGini() {
+
+    }
 }
