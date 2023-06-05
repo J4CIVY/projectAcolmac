@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="projectEnd">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/projectEnd.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
